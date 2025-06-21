@@ -39,6 +39,7 @@ const About: React.FC = () => {
                 <p className="text-lg text-gray-300 leading-relaxed">
                   I specialize in full-stack web development, with experience in building dynamic applications, implementing complex algorithms, and creating user-friendly interfaces. My goal is to continue growing as a developer while contributing to innovative projects.
                 </p>
+                
               </ScrollReveal>
             </div>
           </ScrollReveal>

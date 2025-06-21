@@ -17,6 +17,7 @@ function App() {
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      
     }
   };
 
@@ -49,6 +50,7 @@ function App() {
       <main>
         <div id="home">
           <Home onNavigate={handleSectionChange} />
+          
         </div>
         
         <div id="about">
