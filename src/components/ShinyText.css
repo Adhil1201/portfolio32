@@ -1,0 +1,41 @@
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    #8b5cf6 20%,
+    #a855f7 25%,
+    #ffffff 50%,
+    #06b6d4 75%,
+    #0891b2 80%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine linear infinite;
+  font-weight: bold;
+}
+
+.shiny-text.disabled {
+  animation: none;
+  background: linear-gradient(110deg, #8b5cf6, #a855f7, #ec4899, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Ensure compatibility across browsers */
+@supports not (-webkit-background-clip: text) {
+  .shiny-text {
+    background: linear-gradient(110deg, #8b5cf6, #a855f7, #ec4899, #06b6d4);
+    color: transparent;
+  }
+}
