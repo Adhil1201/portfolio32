@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Aurora from './components/Aurora';
 import DockNavigation from './components/DockNavigation';
+import OptimizedScrollVelocity from './components/OptimizedScrollVelocity';
 import Home from './sections/Home';
 import About from './sections/About';
 import Projects from './sections/Projects';
@@ -17,7 +18,6 @@ function App() {
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      
     }
   };
 
@@ -50,8 +50,10 @@ function App() {
       <main>
         <div id="home">
           <Home onNavigate={handleSectionChange} />
-          
         </div>
+        
+        {/* Optimized Scroll Velocity positioned between Home and About */}
+        <OptimizedScrollVelocity />
         
         <div id="about">
           <About />

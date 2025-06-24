@@ -3,24 +3,13 @@ import { motion } from 'framer-motion';
 import SplitText from '../components/SplitText';
 import ShinyText from '../components/ShinyText';
 import ScrollReveal from '../components/ScrollReveal';
-import { ChevronDown, Code, Zap, Rocket, Star, Globe, Database } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (section: string) => void;
 }
 
 const Home: React.FC<HomeProps> = ({ onNavigate }) => {
-  const velocityItems = [
-    { icon: <Code size={24} />, text: "Full-Stack Development" },
-    { icon: <Zap size={24} />, text: "Modern JavaScript" },
-    { icon: <Rocket size={24} />, text: "React & Node.js" },
-    { icon: <Star size={24} />, text: "UI/UX Design" },
-    { icon: <Globe size={24} />, text: "Web Applications" },
-    { icon: <Database size={24} />, text: "Database Management" },
-    { icon: <Code size={24} />, text: "Python & Java" },
-    { icon: <Zap size={24} />, text: "API Development" },
-  ];
-
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <div className="text-center max-w-4xl mx-auto px-4 z-10">
@@ -82,46 +71,6 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           </ScrollReveal>
         </motion.div>
       </div>
-
-      {/* Scrolling Velocity Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 1 }}
-        className="absolute bottom-24 left-0 right-0 overflow-hidden pointer-events-none"
-      >
-        <div className="relative">
-          {/* First row - moving right */}
-          <div className="flex animate-scroll-right whitespace-nowrap mb-4">
-            {[...velocityItems, ...velocityItems].map((item, index) => (
-              <div
-                key={`right-${index}`}
-                className="flex items-center gap-3 mx-6 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-white min-w-max"
-              >
-                <div className="text-purple-400 flex-shrink-0">
-                  {item.icon}
-                </div>
-                <span className="font-medium text-sm md:text-base">{item.text}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Second row - moving left */}
-          <div className="flex animate-scroll-left whitespace-nowrap">
-            {[...velocityItems.slice().reverse(), ...velocityItems.slice().reverse()].map((item, index) => (
-              <div
-                key={`left-${index}`}
-                className="flex items-center gap-3 mx-6 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-white min-w-max"
-              >
-                <div className="text-cyan-400 flex-shrink-0">
-                  {item.icon}
-                </div>
-                <span className="font-medium text-sm md:text-base">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
